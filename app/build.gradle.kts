@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = AndroidClient.namespace
+    namespace = Namespace.namespaceAppModule
     compileSdk = AndroidSdk.compileSdk
 
     defaultConfig {
@@ -25,6 +25,7 @@ android {
         vectorDrawables {
             useSupportLibrary = AndroidClient.useSupportLibrary
         }
+        buildConfigField("String","SHARE_PREFERENCE_FOLDER","\"share_preference_data\"")
     }
 
     buildTypes {
@@ -44,7 +45,7 @@ android {
                 .forEach { output ->
                     val outputFileName = variant.name +
                             "_ver${variant.versionName}" +
-                            "_${getCurrentDayTime()}.apk"
+                            "_${getCurrentTime()}.apk"
                     output.outputFileName = outputFileName
                 }
         }
@@ -122,4 +123,9 @@ dependencies {
     // Acceptance test
     androidTestImplementation(TestLibraries.testExtJunit)
     androidTestImplementation(TestLibraries.espressoCore)
+
+    // Local library module dependency
+    implementation(project(path = SubModule.core))
+    implementation(project(path = SubModule.data))
+    implementation(project(path = SubModule.domain))
 }

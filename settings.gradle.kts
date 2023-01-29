@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CleanArchitectureCodebase"
 include(":app")
+include(":core")
+include(":data")
+include(":domain")

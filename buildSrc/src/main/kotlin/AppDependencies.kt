@@ -13,8 +13,14 @@ object AndroidSdk {
     const val targetSdk = 33
 }
 
+object Namespace {
+    const val namespaceAppModule = "com.example.cleanarchitecturecodebase"
+    const val namespaceCoreModule = "com.quangnh.core"
+    const val namespaceDataModule = "com.quangnh.data"
+    const val namespaceDomainModule = "com.quangnh.domain"
+}
+
 object AndroidClient {
-    const val namespace = "com.example.cleanarchitecturecodebase"
     const val appId = "com.example.cleanarchitecturecodebase"
     const val versionCode = 1
     const val versionName = "1.0"
@@ -135,9 +141,16 @@ object TestLibraries {
     const val espressoCore = "androidx.test.espresso:espresso-core:${TestLibVersions.espressoCore}"
 }
 
+object SubModule {
+    const val domain = ":domain"
+    const val data = ":data"
+    const val app = ":app"
+    const val core = ":core"
+}
+
 @Suppress("SimpleDateFormat")
-fun getCurrentDayTime(): String {
-    val timeCurrent = Date()
+fun getCurrentTime(): String {
+    val currentTime = Date()
     val dateFormat = SimpleDateFormat("dd.MM.HH.mm")
-    return dateFormat.format(timeCurrent)
+    return dateFormat.format(currentTime)
 }
