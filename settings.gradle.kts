@@ -12,7 +12,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "CleanArchitectureCodebase"
+rootProject.name = "DictionaryApp"
 include(":app")
 include(":core")
 include(":data")
