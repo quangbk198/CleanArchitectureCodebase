@@ -1,4 +1,4 @@
-package com.example.cleanarchitecturecodebase
+package com.example.dictionaryapp
 
 import org.junit.Test
 

@@ -5,7 +5,7 @@ import java.util.*
  * Created by quangnh
  * Date: 27/1/2023
  * Time: 10:50 PM
- * Project CleanArchitectureCodebase
+ * Project DictionaryApp
  */
 object AndroidSdk {
     const val minSdk = 21
@@ -14,14 +14,14 @@ object AndroidSdk {
 }
 
 object Namespace {
-    const val namespaceAppModule = "com.example.cleanarchitecturecodebase"
+    const val namespaceAppModule = "com.example.dictionaryapp"
     const val namespaceCoreModule = "com.quangnh.core"
     const val namespaceDataModule = "com.quangnh.data"
     const val namespaceDomainModule = "com.quangnh.domain"
 }
 
 object AndroidClient {
-    const val appId = "com.example.cleanarchitecturecodebase"
+    const val appId = "com.example.dictionaryapp"
     const val versionCode = 1
     const val versionName = "1.0"
     const val testRunner = "androidx.test.runner.AndroidJUnitRunner"

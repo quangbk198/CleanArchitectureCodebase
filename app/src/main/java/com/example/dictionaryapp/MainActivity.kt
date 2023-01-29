@@ -1,4 +1,4 @@
-package com.example.cleanarchitecturecodebase
+package com.example.dictionaryapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
