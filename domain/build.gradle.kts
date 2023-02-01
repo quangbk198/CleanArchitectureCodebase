@@ -45,6 +45,9 @@ dependencies {
     // Kotlin Standard Library
     implementation(Libraries.kotlinStdLib)
 
+    // Retrofit
+    implementation(Libraries.retrofit)
+
     // Unit or android test
     testImplementation(TestLibraries.junit)
 
