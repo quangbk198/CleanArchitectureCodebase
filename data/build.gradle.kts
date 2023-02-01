@@ -43,6 +43,11 @@ dependencies {
     api(Libraries.roomRuntime)
     kapt(Libraries.roomCompiler)
 
+    // Retrofit
+    implementation(Libraries.retrofit)
+    implementation(Libraries.loggingInterceptor)
+    implementation(Libraries.retrofitConverterGson)
+
     // Unit or android test
     testImplementation(TestLibraries.junit)
 

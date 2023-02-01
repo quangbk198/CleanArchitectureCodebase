@@ -67,7 +67,7 @@ object Libraries {
         const val retrofit = "2.9.0"
         const val loggingInterceptor = "4.9.0"
         const val okhttp3 = "5.0.0-alpha.2"
-        const val roomDB = "2.4.2"
+        const val roomDB = "2.4.3"
     }
 
     const val coreKtx = "androidx.core:core-ktx:${LibVersions.coreKtx}"
