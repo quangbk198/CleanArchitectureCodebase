@@ -2,6 +2,7 @@ package com.quangnh.domain.repository.word
 
 import com.quangnh.core.base.utils.Resource
 import com.quangnh.data.datasource.local.dao.WordInfoDao
+import com.quangnh.data.datasource.local.database.AppDatabase
 import com.quangnh.data.datasource.remote.ApplicationApi
 import com.quangnh.domain.mapper.WordInfoMapper
 import com.quangnh.domain.model.WordInfo
@@ -11,7 +12,7 @@ import javax.inject.Inject
 
 class WordInfoRepositoryImpl @Inject constructor(
     private val appApi: ApplicationApi,
-    private val wordInfoDao: WordInfoDao,
+    private val appDatabase: AppDatabase,
     private val wordInfoMapper: WordInfoMapper
 ) : WordInfoRepository {
 
@@ -27,7 +28,7 @@ class WordInfoRepositoryImpl @Inject constructor(
         emit(Resource.Loading())
 
         val wordInfo = wordInfoMapper.mapFromEntityToDomainModel(
-            wordInfoDao.getWordInfo(word)
+            appDatabase.wordInfoDao.getWordInfo(word)
         )
         emit(Resource.Loading(data = wordInfo))
 
@@ -36,10 +37,10 @@ class WordInfoRepositoryImpl @Inject constructor(
             val remoteWordInfo = appApi.getWordInfo(word)
 
             // Delete old word in local database
-            remoteWordInfo.word?.let { wordInfoDao.deleteWordInfo(it) }
+            remoteWordInfo.word?.let { appDatabase.wordInfoDao.deleteWordInfo(it) }
 
             // Insert latest word into local database
-            wordInfoDao.insertWordInfo(
+            appDatabase.wordInfoDao.insertWordInfo(
                 wordInfoMapper.mapFromDtoToEntity(remoteWordInfo)
             )
 
@@ -52,7 +53,7 @@ class WordInfoRepositoryImpl @Inject constructor(
 
         // Emit latest word from local database to update UI
         val newWordInfo = wordInfoMapper.mapFromEntityToDomainModel(
-            wordInfoDao.getWordInfo(word)
+            appDatabase.wordInfoDao.getWordInfo(word)
         )
         emit(Resource.Success(newWordInfo))
     }

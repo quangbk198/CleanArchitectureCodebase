@@ -29,6 +29,9 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
     val bindingFactory: (LayoutInflater) -> VB
 ) : AppCompatActivity(), BaseBehavior {
 
+    @Inject
+    lateinit var appPreference: AppPreference
+
     lateinit var binding: VB
 
     abstract val viewModel: VM
@@ -84,10 +87,8 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
      */
     private fun setUpViewModel() {
         if (!viewModel.isInitialized) {
-            viewModel.apply {
-                init()
-                onDidBindViewModel()
-            }
+            viewModel.initViewModel(appPreference)
+            viewModel.onDidBindViewModel()
         }
     }
 

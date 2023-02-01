@@ -26,6 +26,7 @@ android {
             useSupportLibrary = AndroidClient.useSupportLibrary
         }
         buildConfigField("String","SHARE_PREFERENCE_FOLDER","\"share_preference_data\"")
+        buildConfigField("String","DATABASE_NAME","\"app_local_database\"")
     }
 
     buildTypes {

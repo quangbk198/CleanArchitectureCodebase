@@ -10,6 +10,8 @@ import androidx.viewbinding.ViewBinding
 import com.quangnh.core.base.utils.ConstantsCore
 import com.quangnh.core.base.utils.extension.observe
 import com.quangnh.core.base.viewmodel.BaseViewModel
+import com.quangnh.core.resource.sharepref.AppPreference
+import javax.inject.Inject
 
 /**
  * Created by quangnh
@@ -20,6 +22,9 @@ import com.quangnh.core.base.viewmodel.BaseViewModel
 abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(
     val bindingFactory: (LayoutInflater) -> VB
 ) : Fragment(), BaseBehavior {
+
+    @Inject
+    lateinit var appPreference: AppPreference
 
     lateinit var binding: VB
 
@@ -95,10 +100,8 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(
      */
     private fun setUpViewModel() {
         if (!viewModel.isInitialized) {
-            viewModel.apply {
-                init()
-                onDidBindViewModel()
-            }
+            viewModel.initViewModel(appPreference)
+            viewModel.onDidBindViewModel()
         }
     }
 

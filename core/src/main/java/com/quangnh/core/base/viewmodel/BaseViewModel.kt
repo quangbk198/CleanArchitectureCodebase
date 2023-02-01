@@ -2,6 +2,7 @@ package com.quangnh.core.base.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.quangnh.core.resource.sharepref.AppPreference
 
 /**
  * Created by quangnh
@@ -10,6 +11,8 @@ import androidx.lifecycle.ViewModel
  * Project DictionaryApp
  */
 abstract class BaseViewModel : ViewModel() {
+
+    lateinit var appPreference: AppPreference
 
     open val errorState = MutableLiveData<String>()
     open val loadingState = MutableLiveData<Boolean>()
@@ -24,7 +27,10 @@ abstract class BaseViewModel : ViewModel() {
         errorState.value = error.message
     }
 
-    internal fun init() {
+    internal fun initViewModel(
+        appPreference: AppPreference
+    ) {
+        this.appPreference = appPreference
         isInitialized = true
     }
 
