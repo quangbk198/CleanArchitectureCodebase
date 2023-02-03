@@ -68,6 +68,7 @@ object Libraries {
         const val loggingInterceptor = "4.9.0"
         const val okhttp3 = "5.0.0-alpha.2"
         const val roomDB = "2.4.3"
+        const val lottie = "5.2.0"
     }
 
     const val coreKtx = "androidx.core:core-ktx:${LibVersions.coreKtx}"
@@ -128,6 +129,9 @@ object Libraries {
 
     // Annotation
     const val androidAnnotations = "androidx.annotation:annotation:${LibVersions.annotations}"
+
+    // Lottie animation
+    const val lottie = "com.airbnb.android:lottie:${LibVersions.lottie}"
 }
 
 object TestLibraries {

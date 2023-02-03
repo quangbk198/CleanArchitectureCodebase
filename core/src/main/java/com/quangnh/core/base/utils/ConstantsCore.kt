@@ -10,4 +10,8 @@ object ConstantsCore {
 
     const val KEY_BUNDLE = "KEY_BUNDLE"
 
+    object ErrorKey {
+        const val errorNoDefine = "errorNoDefine"
+    }
+
 }

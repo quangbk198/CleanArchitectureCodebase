@@ -65,6 +65,14 @@ dependencies {
     // Glide
     api(Libraries.glide)
 
+    // Lottie
+    api(Libraries.lottie)
+
+    // Retrofit
+    api(Libraries.retrofit)
+    api(Libraries.loggingInterceptor)
+    api(Libraries.retrofitConverterGson)
+
     // Hilt
     api(Libraries.hiltAndroid)
     kapt(Libraries.hiltCompiler)
@@ -74,6 +82,9 @@ dependencies {
 
     // View inflation
     api(Libraries.viewPump)
+
+    // Lifecycle
+    api(Libraries.lifeCycleRuntime)
 
     // Unit or android test
     testImplementation(TestLibraries.junit)

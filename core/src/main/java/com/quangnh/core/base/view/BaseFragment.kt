@@ -55,7 +55,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(
 
     override fun addDataObserver() {
         viewModel.apply {
-            activity?.observe(errorState) {
+            activity?.observe(errorThrowable) {
                 onError(it)
             }
 

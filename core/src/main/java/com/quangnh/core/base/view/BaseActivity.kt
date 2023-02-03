@@ -1,9 +1,11 @@
 package com.quangnh.core.base.view
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Window
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -11,7 +13,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewbinding.ViewBinding
+import com.quangnh.core.R
 import com.quangnh.core.base.utils.ConstantsCore
+import com.quangnh.core.base.utils.ErrorUtils
 import com.quangnh.core.base.utils.extension.observe
 import com.quangnh.core.base.utils.extension.showToastShort
 import com.quangnh.core.base.viewmodel.BaseViewModel
@@ -36,12 +40,22 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
 
     abstract val viewModel: VM
 
+    /**
+     * Dialog loading view
+     */
+    private val dialogLoading: Dialog by lazy {
+        Dialog(this, R.style.AppTheme_FullScreen_LightStatusBar).apply {
+            window?.setBackgroundDrawableResource(R.color.white_50)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = bindingFactory(layoutInflater)
         setContentView(binding.root)
 
+        createLoadingDialog()
         setUpViewModel()
         addViewListener()
         addDataObserver()
@@ -55,7 +69,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
 
     override fun addDataObserver() {
         viewModel.apply {
-            observe(errorState) { error ->
+            observe(errorThrowable) { error ->
                 onError(error)
             }
 
@@ -67,11 +81,16 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
 
     override fun onError(error: Any) {
         onLoading(false)
-        showToastShort(error.toString())
+        when (error) {
+            is Throwable -> {
+                showToastShort(ErrorUtils.errorMessage(error, this))
+            }
+        }
     }
 
     override fun onLoading(isLoading: Boolean) {
-
+        if (isLoading) dialogLoading.show()
+        else dialogLoading.dismiss()
     }
 
     override fun onBecomeVisible() {
@@ -245,6 +264,16 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
         if (view != null) {
             val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+    }
+
+    /**
+     * Create loading dialog
+     */
+    private fun createLoadingDialog() {
+        dialogLoading.apply {
+            requestWindowFeature(Window.FEATURE_NO_TITLE)
+            setContentView(R.layout.dialog_loading_view)
         }
     }
 

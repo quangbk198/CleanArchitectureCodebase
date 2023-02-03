@@ -2,6 +2,7 @@ package com.quangnh.core.base.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.quangnh.core.base.utils.SingleLiveEvent
 import com.quangnh.core.resource.sharepref.AppPreference
 
 /**
@@ -14,8 +15,8 @@ abstract class BaseViewModel : ViewModel() {
 
     lateinit var appPreference: AppPreference
 
-    open val errorState = MutableLiveData<String>()
-    open val loadingState = MutableLiveData<Boolean>()
+    open val errorThrowable = SingleLiveEvent<Throwable>()
+    open val loadingState = SingleLiveEvent<Boolean>()
 
     open var isInitialized: Boolean = false
 
@@ -24,7 +25,7 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     fun setError(error: Throwable) {
-        errorState.value = error.message
+        errorThrowable.value = error
     }
 
     internal fun initViewModel(

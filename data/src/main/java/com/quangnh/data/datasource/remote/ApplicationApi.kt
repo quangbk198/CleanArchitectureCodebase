@@ -1,5 +1,6 @@
 package com.quangnh.data.datasource.remote
 
+import com.quangnh.data.datasource.remote.api.Api
 import com.quangnh.data.datasource.remote.dto.WordDto
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -12,7 +13,7 @@ import retrofit2.http.Path
  */
 interface ApplicationApi {
 
-    @GET("api/v2/entries/en-gb/{word}?fields=definitions&strictMatch=true")
+    @GET(Api.GET_WORD)
     suspend fun getWordInfo(
         @Path("word") word: String
     ): WordDto

@@ -115,6 +115,9 @@ dependencies {
     // Glide
     implementation(Libraries.glide)
 
+    // Lottie
+    implementation(Libraries.lottie)
+
     // Annotation
     implementation(Libraries.androidAnnotations)
 

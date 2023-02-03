@@ -44,9 +44,9 @@ dependencies {
     kapt(Libraries.roomCompiler)
 
     // Retrofit
-    implementation(Libraries.retrofit)
-    implementation(Libraries.loggingInterceptor)
-    implementation(Libraries.retrofitConverterGson)
+    api(Libraries.retrofit)
+    api(Libraries.loggingInterceptor)
+    api(Libraries.retrofitConverterGson)
 
     // Unit or android test
     testImplementation(TestLibraries.junit)

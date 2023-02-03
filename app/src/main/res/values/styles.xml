@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Font Regular -->
+    <style name="TextAppearance.Text.Regular" parent="android:TextAppearance">
+        <item name="fontPath">fonts/open_sans/opensans_regular.ttf</item>
+    </style>
+
+    <!-- Font Bold -->
+    <style name="TextAppearance.Text.Bold" parent="android:TextAppearance">
+        <item name="fontPath">fonts/open_sans/opensans_bold.ttf</item>
+    </style>
+
+    <!-- Text style: Regular blue dark 14sp -->
+    <style name="TextNormalBlueDark14" parent="TextAppearance.AppCompat">
+        <item name="android:ellipsize">end</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+    </style>
+
+    <!-- Text style: Regular blue dark 15sp -->
+    <style name="TextNormalBlueDark15" parent="TextAppearance.AppCompat">
+        <item name="android:ellipsize">end</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+    </style>
+
+    <!-- Text style: Regular blue dark 16sp -->
+    <style name="TextNormalBlueDark16" parent="TextAppearance.AppCompat">
+        <item name="android:ellipsize">end</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+    </style>
+
+    <!-- Text style: Bold blue dark 16sp -->
+    <style name="TextBoldBlueDark16" parent="TextAppearance.AppCompat">
+        <item name="android:ellipsize">end</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+    </style>
+
+</resources>
