@@ -2,7 +2,7 @@ package com.quangnh.core.base.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.quangnh.core.base.utils.SingleLiveEvent
+import com.quangnh.core.utils.SingleLiveEvent
 import com.quangnh.core.resource.sharepref.AppPreference
 
 /**

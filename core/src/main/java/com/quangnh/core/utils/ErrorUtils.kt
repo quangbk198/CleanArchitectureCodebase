@@ -1,10 +1,10 @@
-package com.quangnh.core.base.utils
+package com.quangnh.core.utils
 
 import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
 import com.quangnh.core.R
-import com.quangnh.core.base.model.ErrorResponse
+import com.quangnh.core.model.ErrorResponse
 import retrofit2.HttpException
 import java.net.UnknownHostException
 

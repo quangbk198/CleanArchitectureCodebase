@@ -1,4 +1,4 @@
-package com.quangnh.core.base.utils.extension
+package com.quangnh.core.utils.extension
 
 import android.view.View
 import androidx.lifecycle.ViewTreeLifecycleOwner

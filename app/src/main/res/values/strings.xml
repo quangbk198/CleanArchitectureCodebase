@@ -3,4 +3,8 @@
     <string name="activity_main_hint_edt_search">Nhập từ</string>
     <string name="activity_main_btn_search">Tìm kiếm</string>
     <string name="definition">Định nghĩa</string>
+    <string name="settings">Cài đặt</string>
+    <string name="nav_open">Mở</string>
+    <string name="nav_close">Đóng</string>
+
 </resources>

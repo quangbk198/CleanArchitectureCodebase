@@ -1,6 +1,6 @@
 package com.quangnh.domain.repository.word
 
-import com.quangnh.core.base.utils.Resource
+import com.quangnh.core.utils.Resource
 import com.quangnh.data.datasource.local.dao.WordInfoDao
 import com.quangnh.data.datasource.local.database.AppDatabase
 import com.quangnh.data.datasource.remote.ApplicationApi
@@ -45,7 +45,8 @@ class WordInfoRepositoryImpl @Inject constructor(
             )
 
         } catch (throwable: Throwable) {
-            emit(Resource.Error(
+            emit(
+                Resource.Error(
                 throwable = throwable,
                 data = wordInfo
             ))

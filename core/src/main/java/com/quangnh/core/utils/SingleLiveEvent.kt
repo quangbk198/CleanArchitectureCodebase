@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package com.quangnh.core.base.utils
+package com.quangnh.core.utils
 
 import android.util.Log
 import androidx.annotation.MainThread

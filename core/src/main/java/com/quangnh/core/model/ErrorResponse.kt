@@ -1,4 +1,4 @@
-package com.quangnh.core.base.model
+package com.quangnh.core.model
 
 import com.google.gson.annotations.SerializedName
 

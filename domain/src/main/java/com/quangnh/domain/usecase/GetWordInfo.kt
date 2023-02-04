@@ -1,6 +1,6 @@
 package com.quangnh.domain.usecase
 
-import com.quangnh.core.base.utils.Resource
+import com.quangnh.core.utils.Resource
 import com.quangnh.domain.model.WordInfo
 import com.quangnh.domain.repository.word.WordInfoRepository
 import kotlinx.coroutines.flow.Flow

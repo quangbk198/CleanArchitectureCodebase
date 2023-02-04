@@ -14,10 +14,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewbinding.ViewBinding
 import com.quangnh.core.R
-import com.quangnh.core.base.utils.ConstantsCore
-import com.quangnh.core.base.utils.ErrorUtils
-import com.quangnh.core.base.utils.extension.observe
-import com.quangnh.core.base.utils.extension.showToastShort
+import com.quangnh.core.utils.ConstantsCore
+import com.quangnh.core.utils.ErrorUtils
+import com.quangnh.core.utils.extension.observe
+import com.quangnh.core.utils.extension.showToastShort
 import com.quangnh.core.base.viewmodel.BaseViewModel
 import com.quangnh.core.resource.sharepref.AppPreference
 import io.github.inflationx.viewpump.ViewPumpContextWrapper

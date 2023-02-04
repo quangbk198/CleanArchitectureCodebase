@@ -1,4 +1,4 @@
-package com.quangnh.core.base.utils
+package com.quangnh.core.utils
 
 /**
  * Created by quangnh

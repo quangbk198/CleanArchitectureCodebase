@@ -1,9 +1,9 @@
-package com.quangnh.core.base.utils.extension
+package com.quangnh.core.utils.extension
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import com.quangnh.core.base.utils.Resource
+import com.quangnh.core.utils.Resource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.launchIn

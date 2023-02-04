@@ -3,7 +3,7 @@ package com.example.dictionaryapp.features.main.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.quangnh.core.base.utils.extension.onEachWrapper
+import com.quangnh.core.utils.extension.onEachWrapper
 import com.quangnh.core.base.viewmodel.BaseViewModel
 import com.quangnh.domain.model.WordInfo
 import com.quangnh.domain.usecase.GetWordInfo

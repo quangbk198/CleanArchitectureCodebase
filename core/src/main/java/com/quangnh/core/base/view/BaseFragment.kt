@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import com.quangnh.core.base.utils.ConstantsCore
-import com.quangnh.core.base.utils.extension.observe
+import com.quangnh.core.utils.ConstantsCore
+import com.quangnh.core.utils.extension.observe
 import com.quangnh.core.base.viewmodel.BaseViewModel
 import com.quangnh.core.resource.sharepref.AppPreference
 import javax.inject.Inject
