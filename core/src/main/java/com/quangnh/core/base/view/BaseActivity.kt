@@ -20,6 +20,7 @@ import com.quangnh.core.utils.extension.observe
 import com.quangnh.core.utils.extension.showToastShort
 import com.quangnh.core.base.viewmodel.BaseViewModel
 import com.quangnh.core.resource.sharepref.AppPreference
+import com.quangnh.core.utils.LocaleHelper
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import javax.inject.Inject
 
@@ -64,7 +65,13 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel>(
     }
 
     override fun attachBaseContext(newBase: Context?) {
-        super.attachBaseContext(newBase?.let { ViewPumpContextWrapper.wrap(it) })
+        super.attachBaseContext(
+            newBase?.let {
+                ViewPumpContextWrapper.wrap(
+                    LocaleHelper.onAttach(it, ConstantsCore.VI)
+                )
+            }
+        )
     }
 
     override fun addDataObserver() {

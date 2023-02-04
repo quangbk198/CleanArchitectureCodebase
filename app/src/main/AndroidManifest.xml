@@ -19,6 +19,9 @@
             android:name=".features.settings.ui.SettingsActivity"
             android:exported="false"/>
         <activity
+            android:name=".features.settings.language.ui.SettingLanguageActivity"
+            android:exported="false"/>
+        <activity
             android:name=".features.main.ui.MainActivity"
             android:exported="true">
             <intent-filter>

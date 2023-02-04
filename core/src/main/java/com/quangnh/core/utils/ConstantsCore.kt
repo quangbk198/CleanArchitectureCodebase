@@ -9,6 +9,8 @@ package com.quangnh.core.utils
 object ConstantsCore {
 
     const val KEY_BUNDLE = "KEY_BUNDLE"
+    const val VI = "vi"
+    const val EN = "en"
 
     object ErrorKey {
         const val errorNoDefine = "errorNoDefine"

@@ -121,6 +121,9 @@ dependencies {
     // Annotation
     implementation(Libraries.androidAnnotations)
 
+    // MultiDex
+    implementation(Libraries.multidex)
+
     // Unit or android test
     testImplementation(TestLibraries.junit)
 

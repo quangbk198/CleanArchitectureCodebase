@@ -3,7 +3,7 @@ package com.example.dictionaryapp.features.settings.ui
 import androidx.activity.viewModels
 import com.example.dictionaryapp.R
 import com.example.dictionaryapp.databinding.ActivitySettingsBinding
-import com.example.dictionaryapp.features.settings.language.ui.SettingLanguageFragment
+import com.example.dictionaryapp.features.settings.language.ui.SettingLanguageActivity
 import com.example.dictionaryapp.features.settings.viewmodel.SettingsViewModel
 import com.quangnh.core.base.view.BaseActivity
 import com.quangnh.core.utils.extension.safeOnClickListener
@@ -22,7 +22,7 @@ class SettingsActivity : BaseActivity<ActivitySettingsBinding, SettingsViewModel
     override fun addViewListener() {
         binding.apply {
             cvLanguageSetting.safeOnClickListener {
-                openFragment(SettingLanguageFragment.newInstance(), false)
+                openActivity(SettingLanguageActivity::class.java)
             }
         }
     }

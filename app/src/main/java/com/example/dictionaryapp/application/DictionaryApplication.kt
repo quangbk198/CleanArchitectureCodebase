@@ -1,6 +1,10 @@
 package com.example.dictionaryapp.application
 
 import android.app.Application
+import android.content.Context
+import androidx.multidex.MultiDex
+import com.example.dictionaryapp.utils.ConstantApp
+import com.quangnh.core.utils.LocaleHelper
 import dagger.hilt.android.HiltAndroidApp
 import io.github.inflationx.calligraphy3.CalligraphyConfig
 import io.github.inflationx.calligraphy3.CalligraphyInterceptor
@@ -31,5 +35,10 @@ class DictionaryApplication : Application() {
                 .addInterceptor(CalligraphyInterceptor(calligraphyConfig))
                 .build()
         )
+    }
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base?.let { LocaleHelper.onAttach(it, ConstantApp.VI) })
+        MultiDex.install(this)
     }
 }
