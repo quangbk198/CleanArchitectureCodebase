@@ -25,4 +25,7 @@ interface WordInfoDao {
 
     @Query("SELECT * FROM WordInfoEntity WHERE word IN (:word)")
     suspend fun getWordInfo(word: String): WordInfoEntity
+
+    @Query("SELECT * FROM WordInfoEntity")
+    suspend fun getAllWordFromLocal(): List<WordInfoEntity>
 }

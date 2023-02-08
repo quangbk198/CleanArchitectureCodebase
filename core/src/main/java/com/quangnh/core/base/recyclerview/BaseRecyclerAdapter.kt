@@ -13,12 +13,10 @@ abstract class BaseRecyclerAdapter<T: Any> : RecyclerView.Adapter<BaseViewHolder
         const val VIEW_TYPE_LOADING = 0
         const val VIEW_TYPE_ERROR = 1
         const val VIEW_TYPE_SUCCESS = 2
-        const val VIEW_TYPE_DEFAULT = 3
-        const val VIEW_TYPE_EMPTY = 4
+        const val VIEW_TYPE_EMPTY = 3
 
         const val ITEM_COUNT_TYPE_LOADING = 1
         const val ITEM_COUNT_TYPE_ERROR = 1
-        const val ITEM_COUNT_TYPE_DEFAULT = 1
         const val ITEM_COUNT_TYPE_EMPTY = 1
     }
 
@@ -156,10 +154,6 @@ abstract class BaseRecyclerAdapter<T: Any> : RecyclerView.Adapter<BaseViewHolder
 
             VIEW_TYPE_ERROR -> {
                 return setErrorViewHolder(parent = parent) ?: getDefaultViewHolder(parent = ItemDefaultBinding.inflate(LayoutInflater.from(parent.context)))
-            }
-
-            VIEW_TYPE_DEFAULT -> {
-                return getDefaultViewHolder(parent = ItemDefaultBinding.inflate(LayoutInflater.from(parent.context)))
             }
         }
         return getDefaultViewHolder(parent = ItemDefaultBinding.inflate(LayoutInflater.from(parent.context)))

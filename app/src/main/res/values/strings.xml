@@ -9,4 +9,6 @@
     <string name="language">Ngôn ngữ</string>
     <string name="vietnamese">Tiếng việt</string>
     <string name="english">Tiếng anh</string>
+    <string name="history">Lịch sử</string>
+    <string name="empty_search_word">Chưa có từ nào được tìm kiếm</string>
 </resources>

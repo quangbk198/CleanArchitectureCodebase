@@ -8,6 +8,7 @@ package com.quangnh.core.utils
  */
 object ConstantsCore {
 
+    const val EMPTY_STRING = ""
     const val KEY_BUNDLE = "KEY_BUNDLE"
     const val VI = "vi"
     const val EN = "en"

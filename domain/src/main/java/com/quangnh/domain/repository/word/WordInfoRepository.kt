@@ -8,4 +8,6 @@ interface WordInfoRepository {
 
     fun getWordInfo(word: String): Flow<Resource<WordInfo>>
 
+    suspend fun getAllWordLocal(): List<WordInfo>
+
 }

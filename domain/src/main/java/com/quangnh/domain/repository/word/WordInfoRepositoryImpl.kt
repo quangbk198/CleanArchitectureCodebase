@@ -58,4 +58,12 @@ class WordInfoRepositoryImpl @Inject constructor(
         )
         emit(Resource.Success(newWordInfo))
     }
+
+    override suspend fun getAllWordLocal(): List<WordInfo> {
+        val listWordLocal = appDatabase.wordInfoDao.getAllWordFromLocal().map { wordEntity ->
+            wordInfoMapper.mapFromEntityToDomainModel(wordEntity)
+        }
+
+        return listWordLocal
+    }
 }

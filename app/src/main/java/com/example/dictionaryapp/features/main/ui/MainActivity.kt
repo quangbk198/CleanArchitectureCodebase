@@ -7,6 +7,7 @@ import androidx.core.view.GravityCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.dictionaryapp.R
 import com.example.dictionaryapp.databinding.ActivityMainBinding
+import com.example.dictionaryapp.features.history.ui.HistoryActivity
 import com.example.dictionaryapp.features.main.viewmodel.MainViewModel
 import com.example.dictionaryapp.features.settings.ui.SettingsActivity
 import com.google.android.material.navigation.NavigationView
@@ -78,6 +79,12 @@ class MainActivity :
             R.id.nav_settings -> {
                 delayFunction(lifecycleScope, 300) {
                     openActivity(SettingsActivity::class.java)
+                }
+            }
+
+            R.id.nav_history -> {
+                delayFunction(lifecycleScope, 300) {
+                    openActivity(HistoryActivity::class.java)
                 }
             }
         }

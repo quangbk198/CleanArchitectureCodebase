@@ -16,11 +16,14 @@
         android:theme="@style/Theme.DictionaryApp"
         tools:targetApi="31">
         <activity
-            android:name=".features.settings.ui.SettingsActivity"
+            android:name=".features.history.ui.HistoryActivity"
             android:exported="false"/>
         <activity
+            android:name=".features.settings.ui.SettingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".features.settings.language.ui.SettingLanguageActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".features.main.ui.MainActivity"
             android:exported="true">
